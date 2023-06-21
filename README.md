@@ -153,4 +153,3 @@ while 1:
 #b'[*] There are 1337 votes, seems like someone is hacking! :( The flag is KMACTF{p0lyn0m1al_c0nst4nt_t3rm_4s_4_s3cr3c}\n'
 ```
 
-# ****SSS Voting II****
