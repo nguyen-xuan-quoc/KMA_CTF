@@ -126,7 +126,8 @@ g(x) = f0(x) + f1(x) + ... + f9(x)
 với mỗi fi(x) là 1 đa thức riêng của từng voter
 ```
 Như vậy giá trị lớn nhất của hệ số tự do hàm g(x) chỉ là 10.
-⇒ Vậy, ta cần phải thay đổi hệ số tự do của f(x) sao cho tổng số vote thỏa yêu cầu trên. Ý tưởng ở đây là ta tách từng giá trị của id nhận được và cộng cho 1333
+
+⇒ Vậy, ta cần phải thay đổi hệ số tự do của f(x) được cung cấp sao cho tổng số vote thỏa yêu cầu trên. Ý tưởng ở đây là ta tách từng giá trị của id nhận được và cộng cho 1333
 
 ⇒ vậy f’(x) = f(x) + 1333.
 
