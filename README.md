@@ -120,8 +120,12 @@ Original votes (each vote is encoded in 64 hex characters):
 64f6922fbbb50da51d81e4aae0c8af9399782caa64860f190c1cee2e53e00609c412d41eea5f644b5dd2f77ed40402d2db2b2cd2ccb0b9a47d46636c1be952bd011fec07f49b604e5e270f18bcf371eb7727adaf2e8015b25b5c0b1fc270ef8ae9f5dd482a9c3232921f736dcf29efeb36c14483af38875ea5d3cd503317fe208012db1e9793b3b6f3f8fdabd94bfdb7af00aa355116fdc0e52b6b19207f0644
 ```
 
-Điều kiện để có được flag là làm sao cho số vote cho 3 authorities đầu tiên có giá trị là 1337. Vấn đề ở đây là chỉ có 10 người ⇒ giá trị lớn nhất của tổng số vote cũng chỉ là 30. 
-
+Điều kiện để có được flag là làm sao cho số vote cho 3 authorities đầu tiên có giá trị là 1337. Vấn đề ở đây là chỉ có 10 người ⇒ giá trị lớn nhất của tổng số vote cũng chỉ là 30. Nhưng vì mỗi người chỉ có 1 đa thức mà hàm `lagrange_interpolate()` sẽ tính hệ số tự do tại đa thức:
+```
+g(x) = f0(x) + f1(x) + ... + f9(x)
+với mỗi fi(x) là 1 đa thức riêng của từng voter
+```
+Như vậy giá trị lớn nhất của hệ số tự do hàm g(x) chỉ là 10.
 ⇒ Vậy, ta cần phải thay đổi hệ số tự do của f(x) sao cho tổng số vote thỏa yêu cầu trên. Ý tưởng ở đây là ta tách từng giá trị của id nhận được và cộng cho 1333
 
 ⇒ vậy f’(x) = f(x) + 1333.
@@ -130,7 +134,7 @@ Nếu hế số tự do là 1 thì hệ số tự do mới sẽ là 1334 → c�
 
 Nếu hế số tự do là 0 thì hệ số tự do mới sẽ là 1333 → cần 4 người vote yes nữa thì sẽ thỏa
 
- Như vậy ta sẽ brute force đến khi có đủ số lượng vote cần thiết.
+Như vậy ta sẽ brute force đến khi có đủ số lượng vote cần thiết.
 
 ```python
 from pwn import *
