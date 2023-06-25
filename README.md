@@ -350,6 +350,7 @@ y4 - y3 = (a(y3-y2) + b(y2-y1)) mod m
 ```
 
 Thiết lập lattice:
+https://github.com/nguyen-xuan-quoc/Cryptography/blob/Crypto_Blog/lattice.md (bài viết cụ thể về lattice)
 
 ```go
 v1 = [y2-y1, 1, 0, 0]
